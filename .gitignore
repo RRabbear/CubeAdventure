@@ -1,0 +1,38 @@
+# Ignore Unity specific files
+Temp/
+Library/
+obj/
+Build/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.unityproj
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Ignore Visual Studio temporary files, directories, and binaries
+*.swp
+*.*~
+*.lock
+*.tmp
+*.bak
+*.user
+*.suo
+*.log
+*.pidb
+.DS_Store
+.idea/
+
+# Ignore Rider
+.idea/
+*.sln.iml
+
+# Ignore Rider
+.rider/
