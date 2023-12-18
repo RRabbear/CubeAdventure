@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
-using UnityEngine.UI;
 using Assets.Scripts.Core;
 using Assets.Scripts.Gameplay.Player;
+using UnityEngine;
 
 namespace Assets.Scripts.Gameplay.CubeLogic
 {
