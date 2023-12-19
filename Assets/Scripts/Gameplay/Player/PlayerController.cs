@@ -53,6 +53,12 @@ namespace Assets.Scripts.Gameplay.Player
         {
             if (raycastObjW != null)
             {
+                if(raycastObjW.GetComponent<Cube>() == null)
+                {
+                    StartCoroutine(CantMove(Vector3.forward, raycastObjW));
+                    return;
+                }
+
                 if (gameObject.GetComponent<Cube>().CurrentProperty == raycastObjW.GetComponent<Cube>().CurrentProperty)
                 {
                     gameObject.GetComponent<PlayerController>().enabled = false;
@@ -88,6 +94,12 @@ namespace Assets.Scripts.Gameplay.Player
         {
             if (raycastObjA != null)
             {
+                if (raycastObjA.GetComponent<Cube>() == null)
+                {
+                    StartCoroutine(CantMove(Vector3.left, raycastObjA));
+                    return;
+                }
+
                 if (gameObject.GetComponent<Cube>().CurrentProperty == raycastObjA.GetComponent<Cube>().CurrentProperty)
                 {
                     gameObject.GetComponent<PlayerController>().enabled = false;
@@ -123,6 +135,12 @@ namespace Assets.Scripts.Gameplay.Player
         {
             if (raycastObjS != null)
             {
+                if (raycastObjS.GetComponent<Cube>() == null)
+                {
+                    StartCoroutine(CantMove(Vector3.back, raycastObjS));
+                    return;
+                }
+
                 if (gameObject.GetComponent<Cube>().CurrentProperty == raycastObjS.GetComponent<Cube>().CurrentProperty)
                 {
                     gameObject.GetComponent<PlayerController>().enabled = false;
@@ -158,6 +176,12 @@ namespace Assets.Scripts.Gameplay.Player
         {
             if(raycastObjD != null)
             {
+                if (raycastObjD.GetComponent<Cube>() == null)
+                {
+                    StartCoroutine(CantMove(Vector3.right, raycastObjD));
+                    return;
+                }
+
                 if (gameObject.GetComponent<Cube>().CurrentProperty == raycastObjD.GetComponent<Cube>().CurrentProperty)
                 {
                     gameObject.GetComponent<PlayerController>().enabled = false;
@@ -272,11 +296,36 @@ namespace Assets.Scripts.Gameplay.Player
             InputActionsHandler.Instance.ShouldWait = false;
         }
 
+        IEnumerator CantMove(Vector3 direction, GameObject obj)
+        {
+            InputActionsHandler.Instance.ShouldWait = true;
+
+            float remainingDistanceThis = 0.15f;
+            while (remainingDistanceThis > 0)
+            {
+                float trasnlateDistanceThis = Mathf.Min(Time.deltaTime * 8, remainingDistanceThis);
+                transform.Translate(direction * trasnlateDistanceThis, Space.World);
+                remainingDistanceThis -= trasnlateDistanceThis;
+                yield return null;
+            }
+            remainingDistanceThis = 0.15f;
+            while (remainingDistanceThis > 0)
+            {
+                float trasnlateDistanceThis = Mathf.Min(Time.deltaTime * 2, remainingDistanceThis);
+                transform.Translate(direction * (-1) * trasnlateDistanceThis, Space.World);
+                remainingDistanceThis -= trasnlateDistanceThis;
+                yield return null;
+            }
+
+            RaycastObjWASD();
+            InputActionsHandler.Instance.ShouldWait = false;
+        }
+
         private GameObject RaycastObejct(Vector3 startPos, Vector3 direction)
         {
             Ray ray = new Ray(startPos, direction);
             Debug.DrawLine(ray.origin, ray.origin + ray.direction, Color.red, 2.0f);
-            if (Physics.Raycast(ray, out RaycastHit hit, 1.0f, 1 << (int)ELayerName.NoPostCube | 1 << (int)ELayerName.PostCube ))
+            if (Physics.Raycast(ray, out RaycastHit hit, 1.0f, 1 << (int)ELayerName.NoPostCube | 1 << (int)ELayerName.PostCube | 1 << (int)ELayerName.Collider) )
             {
                 return hit.collider.gameObject;
             }

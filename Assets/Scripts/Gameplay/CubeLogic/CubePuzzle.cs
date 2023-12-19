@@ -106,14 +106,16 @@ namespace Assets.Scripts.Gameplay.CubeLogic
             //temporary for masking a puzzle if finished
             if (state == EPuzzleState.Triggered)
             {
-                flagCube.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.green);
+                //flagCube.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.green);
+                flagCube.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", new Color(0f, 1f, 0f, 0.05f));
 
                 LevelStateUpdateEvent();
                 Debug.Log(gameObject + " state is " + CurrentState.ToString());
             }
             else if( state == EPuzzleState.NotTriggered) 
             {
-                flagCube.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white);
+                //flagCube.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white);
+                flagCube.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", new Color(1f, 1f, 1f, 0.05f));
                 Debug.Log(gameObject + " state is " + CurrentState.ToString());
             }
         }

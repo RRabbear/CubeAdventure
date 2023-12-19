@@ -15,7 +15,8 @@ namespace Assets.Scripts.Core
         UI,
         UserLayer6,
         PostCube,
-        NoPostCube
+        NoPostCube,
+        Collider
     }
 
     public class LayerManager

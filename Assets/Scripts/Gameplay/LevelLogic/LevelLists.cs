@@ -9,6 +9,7 @@ namespace Assets.Scripts.Gameplay.LevelLogic
         public enum ELevels
         {
             MainScene,
+            Level00,
             Level01,
             Level02
         }
