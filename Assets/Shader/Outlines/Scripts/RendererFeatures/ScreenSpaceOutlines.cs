@@ -74,6 +74,7 @@ public class ScreenSpaceOutlines : ScriptableRendererFeature {
                 new ShaderTagId("SRPDefaultUnlit")
             };
 
+
             normals.Init("_SceneViewSpaceNormals");
             normalsMaterial = new Material(Shader.Find("Hidden/ViewSpaceNormals"));
 
