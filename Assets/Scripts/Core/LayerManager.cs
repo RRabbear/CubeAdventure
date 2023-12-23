@@ -31,5 +31,10 @@ namespace Assets.Scripts.Core
                 SetLayer(child.gameObject, layerIndex);
             }
         }
+
+        public static int LayerMaskID(ELayerName layerName)
+        {
+            return 1 << (int)layerName;
+        }
     }
 }

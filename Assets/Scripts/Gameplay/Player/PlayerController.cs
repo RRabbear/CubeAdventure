@@ -325,7 +325,7 @@ namespace Assets.Scripts.Gameplay.Player
         {
             Ray ray = new Ray(startPos, direction);
             Debug.DrawLine(ray.origin, ray.origin + ray.direction, Color.red, 2.0f);
-            if (Physics.Raycast(ray, out RaycastHit hit, 1.0f, 1 << (int)ELayerName.NoPostCube | 1 << (int)ELayerName.PostCube | 1 << (int)ELayerName.Collider) )
+            if (Physics.Raycast(ray, out RaycastHit hit, 1.0f, LayerManager.LayerMaskID(ELayerName.NoPostCube) | LayerManager.LayerMaskID(ELayerName.PostCube) | LayerManager.LayerMaskID(ELayerName.Collider)) )
             {
                 return hit.collider.gameObject;
             }
