@@ -3,6 +3,7 @@ using Assets.Scripts.Gameplay.LevelLogic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -22,12 +23,19 @@ namespace Assets.Scripts.Gameplay.CubeLogic
         public Cube.CubeProperty PuzzleAnswer;
         [HideInInspector]
         public EPuzzleState CurrentState;
+        [HideInInspector]
+        public Cube CurrentPuzzleCube;
 
         private Collider _collider;
+        private Color _baseColor;
+        private GameObject _flagCube;
 
         void Start()
         {
             _collider = gameObject.GetComponent<Collider>();
+            _baseColor = gameObject.GetComponent<Renderer>().material.color;
+            _flagCube = this.gameObject.transform.GetChild(0).gameObject;
+            _flagCube.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", new Color(_baseColor.r, _baseColor.g, _baseColor.b, 0.05f));
         }
 
         private void OnTriggerEnter(Collider other)
@@ -49,11 +57,11 @@ namespace Assets.Scripts.Gameplay.CubeLogic
                     }
                     if(enteredCube.CurrentProperty == PuzzleAnswer)
                     {
+                        CurrentPuzzleCube = enteredCube;
                         UpdateCurrentState(EPuzzleState.Triggered);
                     }
                     else
                     {
-                        Debug.Log("2");
                         UpdateCurrentState(EPuzzleState.NotTriggered);
                     }
                 }
@@ -97,8 +105,7 @@ namespace Assets.Scripts.Gameplay.CubeLogic
         private void UpdateCurrentState(EPuzzleState state)
         {
             CurrentState = state;
-            GameObject flagCube = this.gameObject.transform.GetChild(0).gameObject;
-            if(flagCube == null)
+            if(_flagCube == null)
             {
                 Debug.LogError("Can't finish the task: UpdateCurrentState of " + gameObject.name + "! Check if there is a FlagCube!");
                 return;
@@ -107,7 +114,7 @@ namespace Assets.Scripts.Gameplay.CubeLogic
             if (state == EPuzzleState.Triggered)
             {
                 //flagCube.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.green);
-                flagCube.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", new Color(0f, 1f, 0f, 0.05f));
+                _flagCube.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", new Color(0f, 1f, 0f, 0.05f));
 
                 LevelStateUpdateEvent();
                 Debug.Log(gameObject + " state is " + CurrentState.ToString());
@@ -115,7 +122,7 @@ namespace Assets.Scripts.Gameplay.CubeLogic
             else if( state == EPuzzleState.NotTriggered) 
             {
                 //flagCube.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", Color.white);
-                flagCube.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", new Color(1f, 1f, 1f, 0.05f));
+                _flagCube.GetComponent<MeshRenderer>().material.SetColor("_BaseColor", new Color(_baseColor.r, _baseColor.g, _baseColor.b, 0.05f));
                 Debug.Log(gameObject + " state is " + CurrentState.ToString());
             }
         }

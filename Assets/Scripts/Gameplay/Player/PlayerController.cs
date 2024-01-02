@@ -29,6 +29,7 @@ namespace Assets.Scripts.Gameplay.Player
             InputActionsHandler.Instance.MoveS += HandleS;
             InputActionsHandler.Instance.MoveD += HandleD;
             InputActionsHandler.Instance.ApplySpace += HandleSpace;
+            InputActionsHandler.Instance.ResetLevel += HandleR;
 
             RaycastObjWASD();
         }
@@ -40,7 +41,17 @@ namespace Assets.Scripts.Gameplay.Player
             InputActionsHandler.Instance.MoveS -= HandleS;
             InputActionsHandler.Instance.MoveD -= HandleD;
             InputActionsHandler.Instance.ApplySpace -= HandleSpace;
+            InputActionsHandler.Instance.ResetLevel -= HandleR;
         }
+
+        private void HandleR()
+        {
+            if (GameManager.Instance.CurrentLevelIndex != 0)
+            {
+                GameManager.Instance.ResetCurrentLevel();
+            }   
+        }
+
         private void HandleSpace()
         {
             if(GameManager.Instance.CurrentLevelSelector != null) 

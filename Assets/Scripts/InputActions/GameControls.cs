@@ -73,6 +73,24 @@ namespace Assets.Scripts.InputActions
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reset"",
+                    ""type"": ""Button"",
+                    ""id"": ""cdbd3a6b-4137-4789-a58a-db5255e824ca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Esc"",
+                    ""type"": ""Button"",
+                    ""id"": ""08b93ca0-2cbc-43fd-8afb-7e07c9defa0b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -130,6 +148,28 @@ namespace Assets.Scripts.InputActions
                     ""action"": ""Apply"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76f761db-58d9-4df2-a421-7791ad61d018"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Reset"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bdb4186a-2692-47e1-84a7-bb05e35cbeff"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Esc"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -143,6 +183,8 @@ namespace Assets.Scripts.InputActions
             m_Player_MoveS = m_Player.FindAction("MoveS", throwIfNotFound: true);
             m_Player_MoveD = m_Player.FindAction("MoveD", throwIfNotFound: true);
             m_Player_Apply = m_Player.FindAction("Apply", throwIfNotFound: true);
+            m_Player_Reset = m_Player.FindAction("Reset", throwIfNotFound: true);
+            m_Player_Esc = m_Player.FindAction("Esc", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -207,6 +249,8 @@ namespace Assets.Scripts.InputActions
         private readonly InputAction m_Player_MoveS;
         private readonly InputAction m_Player_MoveD;
         private readonly InputAction m_Player_Apply;
+        private readonly InputAction m_Player_Reset;
+        private readonly InputAction m_Player_Esc;
         public struct PlayerActions
         {
             private @GameControls m_Wrapper;
@@ -216,6 +260,8 @@ namespace Assets.Scripts.InputActions
             public InputAction @MoveS => m_Wrapper.m_Player_MoveS;
             public InputAction @MoveD => m_Wrapper.m_Player_MoveD;
             public InputAction @Apply => m_Wrapper.m_Player_Apply;
+            public InputAction @Reset => m_Wrapper.m_Player_Reset;
+            public InputAction @Esc => m_Wrapper.m_Player_Esc;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -240,6 +286,12 @@ namespace Assets.Scripts.InputActions
                     @Apply.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnApply;
                     @Apply.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnApply;
                     @Apply.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnApply;
+                    @Reset.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReset;
+                    @Reset.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReset;
+                    @Reset.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReset;
+                    @Esc.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
+                    @Esc.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
+                    @Esc.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -259,6 +311,12 @@ namespace Assets.Scripts.InputActions
                     @Apply.started += instance.OnApply;
                     @Apply.performed += instance.OnApply;
                     @Apply.canceled += instance.OnApply;
+                    @Reset.started += instance.OnReset;
+                    @Reset.performed += instance.OnReset;
+                    @Reset.canceled += instance.OnReset;
+                    @Esc.started += instance.OnEsc;
+                    @Esc.performed += instance.OnEsc;
+                    @Esc.canceled += instance.OnEsc;
                 }
             }
         }
@@ -270,6 +328,8 @@ namespace Assets.Scripts.InputActions
             void OnMoveS(InputAction.CallbackContext context);
             void OnMoveD(InputAction.CallbackContext context);
             void OnApply(InputAction.CallbackContext context);
+            void OnReset(InputAction.CallbackContext context);
+            void OnEsc(InputAction.CallbackContext context);
         }
     }
 }

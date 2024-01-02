@@ -20,6 +20,9 @@ namespace Assets.Scripts.InputActions
         public delegate void PlayerApply();
         public event PlayerApply ApplySpace;
 
+        public delegate void PlayerReset();
+        public event PlayerReset ResetLevel;
+
         public void Initialized()
         {
             GameControls.Instance.asset.Enable();
@@ -28,6 +31,7 @@ namespace Assets.Scripts.InputActions
             GameControls.Instance.Player.MoveS.performed += MoveSPerformed;
             GameControls.Instance.Player.MoveD.performed += MoveDPerformed;
             GameControls.Instance.Player.Apply.performed += ApplyPerformed;
+            GameControls.Instance.Player.Reset.performed += ResetPerformed;
         }
 
         public void Dispose()
@@ -37,6 +41,11 @@ namespace Assets.Scripts.InputActions
             GameControls.Instance.Player.MoveS.performed -= MoveSPerformed;
             GameControls.Instance.Player.MoveD.performed -= MoveDPerformed;
             GameControls.Instance.Player.Apply.performed -= ApplyPerformed;
+        }
+        private void ResetPerformed(InputAction.CallbackContext context)
+        {
+            if (!ShouldWait)
+                ResetLevel();
         }
 
         private void ApplyPerformed(InputAction.CallbackContext context)
