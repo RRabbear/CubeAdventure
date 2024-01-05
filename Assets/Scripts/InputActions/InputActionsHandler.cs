@@ -4,6 +4,7 @@ using UnityEngine;
 using Assets.Scripts.BaseUtils;
 using UnityEngine.InputSystem;
 using System;
+using Assets.Scripts.Core;
 
 namespace Assets.Scripts.InputActions
 {
@@ -44,37 +45,37 @@ namespace Assets.Scripts.InputActions
         }
         private void ResetPerformed(InputAction.CallbackContext context)
         {
-            if (!ShouldWait)
+            if (!ShouldWait && GameManager.Instance.CurrentPlayer != null)
                 ResetLevel();
         }
 
         private void ApplyPerformed(InputAction.CallbackContext context)
         {
-            if (!ShouldWait)
+            if (!ShouldWait && GameManager.Instance.CurrentPlayer != null)
                 ApplySpace();
         }
 
         private void MoveWPerformed(InputAction.CallbackContext obj)
         {
-            if(!ShouldWait)
+            if (!ShouldWait && GameManager.Instance.CurrentPlayer != null)
                 MoveW();
         }
 
         private void MoveAPerformed(InputAction.CallbackContext obj)
         {
-            if (!ShouldWait)
+            if (!ShouldWait && GameManager.Instance.CurrentPlayer != null)
                 MoveA();
         }
 
         private void MoveSPerformed(InputAction.CallbackContext obj)
         {
-            if (!ShouldWait)
+            if (!ShouldWait && GameManager.Instance.CurrentPlayer != null)
                 MoveS();
         }
 
         private void MoveDPerformed(InputAction.CallbackContext obj)
         {
-            if (!ShouldWait)
+            if (!ShouldWait && GameManager.Instance.CurrentPlayer != null)
                 MoveD();
         }
     }

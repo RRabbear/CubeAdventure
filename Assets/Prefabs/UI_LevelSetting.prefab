@@ -120,6 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e411d5db1176be489c3ea5a88328ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttonLevelSetting: {fileID: 2812410567874381990}
+  _panelLevelSetting: {fileID: 2812410567996926964}
+  _levelSettingFirst: {fileID: 2812410568169181208}
 --- !u!1 &2812410567199901649
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +135,7 @@ GameObject:
   - component: {fileID: 2812410567199901645}
   - component: {fileID: 2812410567199901644}
   - component: {fileID: 2812410567199901651}
+  - component: {fileID: 8294211850567372410}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -244,7 +248,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2812410567138110756}
         m_TargetAssemblyTypeName: Assets.Scripts.UI.LevelSetting, Assembly-CSharp
-        m_MethodName: ExitFullScreenUI
+        m_MethodName: OnButtonContinue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -254,30 +258,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2812410567996926964}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2812410567874381990}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+--- !u!114 &8294211850567372410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812410567199901649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1cbc8a19dbf0544a361083ee60fde0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2812410567805187061
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,33 +529,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2812410567874381990}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2812410567996926964}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 2812410567138110756}
         m_TargetAssemblyTypeName: Assets.Scripts.UI.LevelSetting, Assembly-CSharp
-        m_MethodName: EnterFullScreenUI
+        m_MethodName: HandleUILevelSetting
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -571,7 +539,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2812410567996926964
 GameObject:
@@ -662,6 +630,7 @@ GameObject:
   - component: {fileID: 2812410568169181204}
   - component: {fileID: 2812410568169181211}
   - component: {fileID: 2812410568169181210}
+  - component: {fileID: 2695168706443666607}
   m_Layer: 5
   m_Name: Reset
   m_TagString: Untagged
@@ -774,19 +743,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2812410567138110756}
         m_TargetAssemblyTypeName: Assets.Scripts.UI.LevelSetting, Assembly-CSharp
-        m_MethodName: ResetButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: HandleR
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2812410567138110756}
-        m_TargetAssemblyTypeName: Assets.Scripts.UI.LevelSetting, Assembly-CSharp
-        m_MethodName: ExitFullScreenUI
+        m_MethodName: OnButtonReset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -796,30 +753,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2812410567996926964}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2812410567874381990}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+--- !u!114 &2695168706443666607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812410568169181208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1cbc8a19dbf0544a361083ee60fde0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2812410568260929642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,17 +1144,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 490b7c36897d8934583d96c7c35c50c6, type: 3}
+  m_PointAction: {fileID: -4874597488298502253, guid: 490b7c36897d8934583d96c7c35c50c6, type: 3}
+  m_MoveAction: {fileID: -7834142213223454615, guid: 490b7c36897d8934583d96c7c35c50c6, type: 3}
+  m_SubmitAction: {fileID: 4461963048558495059, guid: 490b7c36897d8934583d96c7c35c50c6, type: 3}
+  m_CancelAction: {fileID: 7469387406521850079, guid: 490b7c36897d8934583d96c7c35c50c6, type: 3}
+  m_LeftClickAction: {fileID: -3559605126198331200, guid: 490b7c36897d8934583d96c7c35c50c6, type: 3}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
 --- !u!1 &2812410568483899937
@@ -1359,6 +1304,7 @@ GameObject:
   - component: {fileID: 2812410568599703382}
   - component: {fileID: 2812410568599703381}
   - component: {fileID: 2812410568599703380}
+  - component: {fileID: 6363891007345194270}
   m_Layer: 5
   m_Name: MainScene
   m_TagString: Untagged
@@ -1471,18 +1417,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2812410567138110756}
         m_TargetAssemblyTypeName: Assets.Scripts.UI.LevelSetting, Assembly-CSharp
-        m_MethodName: ExitFullScreenUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2812410567138110756}
-        m_TargetAssemblyTypeName: Assets.Scripts.UI.LevelSetting, Assembly-CSharp
         m_MethodName: EnterMainScene
         m_Mode: 1
         m_Arguments:
@@ -1493,6 +1427,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6363891007345194270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812410568599703386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1cbc8a19dbf0544a361083ee60fde0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2812410568685495126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,7 +1601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5733782232706591584}
   m_Layer: 0
-  m_Name: UI
+  m_Name: UI_LevelSetting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

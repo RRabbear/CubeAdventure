@@ -16,9 +16,11 @@ namespace Assets.Scripts.Core
         [SerializeField]
         private Animator _sceneTransAnim;
 
+        public int LevelUILock = 0;
+
         private void OnEnable()
         {
-            SetCurrentLevelIndex(1);
+            UIInputActionsHandler.Instance.Initialized();
         }
 
         public void SetCurrentPlayer(GameObject obj)
@@ -39,8 +41,7 @@ namespace Assets.Scripts.Core
         public void LoadSelectedLevel()
         {
             int index = (int)CurrentLevelSelector.GetComponent<LevelSelector>().SelectedLevel;
-            StartCoroutine(LoadLevel(index));
-            SetCurrentLevelIndex(index);
+            LoadSelectedLevel(index);
         }
 
         public void LoadSelectedLevel(int index)
@@ -51,13 +52,12 @@ namespace Assets.Scripts.Core
 
         public void ResetCurrentLevel()
         {
-            StartCoroutine(LoadLevel(CurrentLevelIndex));
+            LoadSelectedLevel(CurrentLevelIndex);
         }
 
         public void LoadMainLevel()
         {
-            StartCoroutine(LoadLevel(1));
-            SetCurrentLevelIndex(1);
+            LoadSelectedLevel(1);
         }
 
         IEnumerator LoadLevel(int levelIndex)

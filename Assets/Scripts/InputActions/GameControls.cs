@@ -84,9 +84,9 @@ namespace Assets.Scripts.InputActions
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Esc"",
+                    ""name"": ""Escape"",
                     ""type"": ""Button"",
-                    ""id"": ""08b93ca0-2cbc-43fd-8afb-7e07c9defa0b"",
+                    ""id"": ""7961dc62-59ae-4386-b7d0-97f6018be74b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -107,8 +107,30 @@ namespace Assets.Scripts.InputActions
                 },
                 {
                     ""name"": """",
+                    ""id"": ""c12c335e-a91c-4e84-9e21-0064402912bd"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveW"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""8b921b21-f24e-4a87-b6fd-5d347da47f42"",
                     ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveA"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b7675575-6b09-4d4a-8ea3-25fbba6599c2"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -129,8 +151,30 @@ namespace Assets.Scripts.InputActions
                 },
                 {
                     ""name"": """",
+                    ""id"": ""c96a4b39-23ba-4cf2-a30b-2ee3e647965f"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveS"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""054828a6-8844-40f8-a89e-53e6b310524f"",
                     ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25f81b1f-b867-427e-ab97-981ccdcb0234"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -151,6 +195,17 @@ namespace Assets.Scripts.InputActions
                 },
                 {
                     ""name"": """",
+                    ""id"": ""bf926eb0-1535-4146-bfe9-33cdde3d845c"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Apply"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""76f761db-58d9-4df2-a421-7791ad61d018"",
                     ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
@@ -162,12 +217,219 @@ namespace Assets.Scripts.InputActions
                 },
                 {
                     ""name"": """",
-                    ""id"": ""bdb4186a-2692-47e1-84a7-bb05e35cbeff"",
+                    ""id"": ""98f065eb-d979-4cc6-93b0-a08afb4dded4"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Esc"",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""88896d07-f89a-4b05-8382-7cfc295850e2"",
+            ""actions"": [
+                {
+                    ""name"": ""Navigate"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""2cee2513-42d9-4624-9515-abd14fea5cc6"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Submit"",
+                    ""type"": ""Button"",
+                    ""id"": ""0f8acf82-9f0a-4fe6-ba7a-11ce2b80c8e9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd61370d-3172-4eef-9403-b48e220d6a87"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Point"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""4488c139-2164-423a-9464-2160ac442ab3"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""daa0847a-c794-4b03-9187-6ecb9c4a5160"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""8c2f1342-dd12-4a42-916a-23f28ed84875"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""ef2cbc17-5a25-4435-bdf0-8286302e407f"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""7c1bce1d-644e-4152-977d-f3e075247983"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b1fe7595-2a44-4715-ad6f-5f0608e82000"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""c3186b07-8e19-4d98-92bd-7dff9f8065b6"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e456502f-6365-458a-ab39-424c88b47d92"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""c4c3dd15-f298-42e6-99e3-5d16347e9e01"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""dd3e59aa-3cb6-4726-8547-023b9607df70"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""60f53da1-4db4-4037-8e34-cb974de229af"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16f20c61-1518-40ee-ae3b-c0ae474e8533"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1ce5ac13-7eac-4893-82cc-6bb0b87491fe"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ffd6769b-02c7-4590-817b-d624c0ab096d"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f20e014-e5e9-4c55-80e3-c0c4059ef782"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eaaf30cd-6189-4ff5-be8a-9a5d3563017c"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -184,7 +446,14 @@ namespace Assets.Scripts.InputActions
             m_Player_MoveD = m_Player.FindAction("MoveD", throwIfNotFound: true);
             m_Player_Apply = m_Player.FindAction("Apply", throwIfNotFound: true);
             m_Player_Reset = m_Player.FindAction("Reset", throwIfNotFound: true);
-            m_Player_Esc = m_Player.FindAction("Esc", throwIfNotFound: true);
+            m_Player_Escape = m_Player.FindAction("Escape", throwIfNotFound: true);
+            // UI
+            m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+            m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
+            m_UI_Submit = m_UI.FindAction("Submit", throwIfNotFound: true);
+            m_UI_Escape = m_UI.FindAction("Escape", throwIfNotFound: true);
+            m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
+            m_UI_Click = m_UI.FindAction("Click", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -250,7 +519,7 @@ namespace Assets.Scripts.InputActions
         private readonly InputAction m_Player_MoveD;
         private readonly InputAction m_Player_Apply;
         private readonly InputAction m_Player_Reset;
-        private readonly InputAction m_Player_Esc;
+        private readonly InputAction m_Player_Escape;
         public struct PlayerActions
         {
             private @GameControls m_Wrapper;
@@ -261,7 +530,7 @@ namespace Assets.Scripts.InputActions
             public InputAction @MoveD => m_Wrapper.m_Player_MoveD;
             public InputAction @Apply => m_Wrapper.m_Player_Apply;
             public InputAction @Reset => m_Wrapper.m_Player_Reset;
-            public InputAction @Esc => m_Wrapper.m_Player_Esc;
+            public InputAction @Escape => m_Wrapper.m_Player_Escape;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -289,9 +558,9 @@ namespace Assets.Scripts.InputActions
                     @Reset.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReset;
                     @Reset.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReset;
                     @Reset.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReset;
-                    @Esc.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
-                    @Esc.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
-                    @Esc.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
+                    @Escape.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
+                    @Escape.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
+                    @Escape.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -314,13 +583,78 @@ namespace Assets.Scripts.InputActions
                     @Reset.started += instance.OnReset;
                     @Reset.performed += instance.OnReset;
                     @Reset.canceled += instance.OnReset;
-                    @Esc.started += instance.OnEsc;
-                    @Esc.performed += instance.OnEsc;
-                    @Esc.canceled += instance.OnEsc;
+                    @Escape.started += instance.OnEscape;
+                    @Escape.performed += instance.OnEscape;
+                    @Escape.canceled += instance.OnEscape;
                 }
             }
         }
         public PlayerActions @Player => new PlayerActions(this);
+
+        // UI
+        private readonly InputActionMap m_UI;
+        private IUIActions m_UIActionsCallbackInterface;
+        private readonly InputAction m_UI_Navigate;
+        private readonly InputAction m_UI_Submit;
+        private readonly InputAction m_UI_Escape;
+        private readonly InputAction m_UI_Point;
+        private readonly InputAction m_UI_Click;
+        public struct UIActions
+        {
+            private @GameControls m_Wrapper;
+            public UIActions(@GameControls wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
+            public InputAction @Submit => m_Wrapper.m_UI_Submit;
+            public InputAction @Escape => m_Wrapper.m_UI_Escape;
+            public InputAction @Point => m_Wrapper.m_UI_Point;
+            public InputAction @Click => m_Wrapper.m_UI_Click;
+            public InputActionMap Get() { return m_Wrapper.m_UI; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+            public void SetCallbacks(IUIActions instance)
+            {
+                if (m_Wrapper.m_UIActionsCallbackInterface != null)
+                {
+                    @Navigate.started -= m_Wrapper.m_UIActionsCallbackInterface.OnNavigate;
+                    @Navigate.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnNavigate;
+                    @Navigate.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnNavigate;
+                    @Submit.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSubmit;
+                    @Submit.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSubmit;
+                    @Submit.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSubmit;
+                    @Escape.started -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
+                    @Escape.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
+                    @Escape.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
+                    @Point.started -= m_Wrapper.m_UIActionsCallbackInterface.OnPoint;
+                    @Point.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnPoint;
+                    @Point.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnPoint;
+                    @Click.started -= m_Wrapper.m_UIActionsCallbackInterface.OnClick;
+                    @Click.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnClick;
+                    @Click.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnClick;
+                }
+                m_Wrapper.m_UIActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @Navigate.started += instance.OnNavigate;
+                    @Navigate.performed += instance.OnNavigate;
+                    @Navigate.canceled += instance.OnNavigate;
+                    @Submit.started += instance.OnSubmit;
+                    @Submit.performed += instance.OnSubmit;
+                    @Submit.canceled += instance.OnSubmit;
+                    @Escape.started += instance.OnEscape;
+                    @Escape.performed += instance.OnEscape;
+                    @Escape.canceled += instance.OnEscape;
+                    @Point.started += instance.OnPoint;
+                    @Point.performed += instance.OnPoint;
+                    @Point.canceled += instance.OnPoint;
+                    @Click.started += instance.OnClick;
+                    @Click.performed += instance.OnClick;
+                    @Click.canceled += instance.OnClick;
+                }
+            }
+        }
+        public UIActions @UI => new UIActions(this);
         public interface IPlayerActions
         {
             void OnMoveW(InputAction.CallbackContext context);
@@ -329,7 +663,15 @@ namespace Assets.Scripts.InputActions
             void OnMoveD(InputAction.CallbackContext context);
             void OnApply(InputAction.CallbackContext context);
             void OnReset(InputAction.CallbackContext context);
-            void OnEsc(InputAction.CallbackContext context);
+            void OnEscape(InputAction.CallbackContext context);
+        }
+        public interface IUIActions
+        {
+            void OnNavigate(InputAction.CallbackContext context);
+            void OnSubmit(InputAction.CallbackContext context);
+            void OnEscape(InputAction.CallbackContext context);
+            void OnPoint(InputAction.CallbackContext context);
+            void OnClick(InputAction.CallbackContext context);
         }
     }
 }
