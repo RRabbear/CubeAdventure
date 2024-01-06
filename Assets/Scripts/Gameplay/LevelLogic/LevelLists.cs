@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Gameplay.LevelLogic
 {
-    public class LevelLists : MonoBehaviour
+    public class LevelLists
     {
         public enum ELevels
         {

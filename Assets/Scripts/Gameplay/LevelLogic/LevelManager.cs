@@ -41,11 +41,13 @@ namespace Assets.Scripts.Gameplay.LevelLogic
 
         private void UpdateLevelState()
         {
+            Debug.Log("enter update level state");
             int currentPlayerCnt = 0;
             foreach(var item in CubePuzzleList)
             {
                 if(item.CurrentState == CubePuzzle.EPuzzleState.Triggered)
                 {
+                    Debug.Log(GameManager.Instance.CurrentPlayer);
                     if(item.CurrentPuzzleCube == GameManager.Instance.CurrentPlayer)
                     {
                         currentPlayerCnt++;
@@ -57,12 +59,15 @@ namespace Assets.Scripts.Gameplay.LevelLogic
                     return;
                 }
             }
+            Debug.Log(currentPlayerCnt);
             if (currentPlayerCnt != 1)
             {
                 return;
             }
             Currentstate = ELevelState.Finished;
             Debug.Log(Currentstate.ToString());
+
+            GameManager.Instance.UpdateLevelStateDic(GameManager.Instance.CurrentLevelSelector);
 
             GameManager.Instance.LoadMainLevel();
         }

@@ -37,7 +37,7 @@ namespace Assets.Scripts.Gameplay.CubeLogic
         {
             if (GetComponent<PlayerController>().enabled == true)
             {
-                GameManager.Instance.SetCurrentPlayer(gameObject);
+                GameManager.Instance.SetCurrentPlayer(this);
             }
         }
 
@@ -108,7 +108,7 @@ namespace Assets.Scripts.Gameplay.CubeLogic
             if (isCurrentCube)
             {
                 LayerManager.SetLayer(gameObject, (int)ELayerName.PostCube);
-                GameManager.Instance.SetCurrentPlayer(gameObject);
+                GameManager.Instance.SetCurrentPlayer(this);
             }
             else
             {

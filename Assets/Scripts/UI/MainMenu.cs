@@ -24,7 +24,7 @@ namespace Assets.Scripts.UI
 
         public void PlayButton()
         {
-            GameManager.Instance.LoadSelectedLevel(1);
+            GameManager.Instance.LoadMainLevel();
         }
 
         public void QuitButton()

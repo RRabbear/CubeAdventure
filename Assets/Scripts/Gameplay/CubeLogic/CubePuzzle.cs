@@ -88,7 +88,6 @@ namespace Assets.Scripts.Gameplay.CubeLogic
             {
                 if (_collider.isTrigger)
                 {
-                    Debug.Log("1");
                     UpdateCurrentState(EPuzzleState.NotTriggered);
                 }
                 else

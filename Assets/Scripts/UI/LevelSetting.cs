@@ -74,7 +74,7 @@ namespace Assets.Scripts.UI
 
         public void EnterMainMenu()
         {
-            GameManager.Instance.LoadSelectedLevel(0);
+            GameManager.Instance.LoadMainMenu();
         }
 
         public void EnterMainScene()
