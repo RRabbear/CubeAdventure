@@ -65,9 +65,8 @@ namespace Assets.Scripts.Gameplay.LevelLogic
                 return;
             }
             Currentstate = ELevelState.Finished;
-            Debug.Log(Currentstate.ToString());
 
-            GameManager.Instance.UpdateLevelStateDic(GameManager.Instance.CurrentLevelSelector);
+            GameManager.Instance.UpdateLevelStateDic(GameManager.Instance.CurrentLevelSelector, Currentstate);
 
             GameManager.Instance.LoadMainLevel();
         }

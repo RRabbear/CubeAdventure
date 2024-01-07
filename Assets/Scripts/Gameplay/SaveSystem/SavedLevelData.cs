@@ -8,10 +8,10 @@ namespace Assets.Scripts.Gameplay.SaveSystem
     [System.Serializable]
     public class SavedLevelData
     {
-        public Dictionary<LevelLists.ELevels, LevelManager.ELevelState> _levelStateDic;
+        public Dictionary<LevelLists.ELevels, LevelManager.ELevelState> LevelStateDic;
         public SavedLevelData(Dictionary<LevelLists.ELevels, LevelManager.ELevelState> dic)
         {
-            _levelStateDic = dic;
+            LevelStateDic = dic;
         }
     }
 }

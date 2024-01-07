@@ -18,14 +18,17 @@ namespace Assets.Scripts.Core
         public LevelSelector CurrentLevelSelector { get; private set; }
         public int CurrentLevelIndex { get; private set; }
 
-        public Dictionary<LevelLists.ELevels, LevelManager.ELevelState> levelStateDic;
+        public Dictionary<LevelLists.ELevels, LevelManager.ELevelState> LevelStateDic;
+        [HideInInspector] public Vector3 CubePlayerPos;
+        private Vector3 CubePlayerLevelSelectorPos;
+        private Vector3 CubePlayerLevelSelectorActualPos;
 
         [SerializeField] private Animator _sceneTransAnim;
         [SerializeField] private List<LevelLists.ELevels> _levelLists;
 
         private void OnEnable()
         {
-            UIInputActionsHandler.Instance.Initialized();        
+            UIInputActionsHandler.Instance.Initialized();
         }
 
         public void SetCurrentPlayer(Cube obj)
@@ -36,6 +39,11 @@ namespace Assets.Scripts.Core
         public void SetCurrentLevelSelector(LevelSelector obj)
         {
             CurrentLevelSelector = obj;
+            if (obj != null)
+            {
+                CubePlayerLevelSelectorPos = GetActualPos(CurrentLevelSelector.transform.position);
+                CubePlayerLevelSelectorActualPos = GetActualPos(CurrentLevelSelector.CubeSavedPos.transform.position);
+            }
         }
 
         public void SetCurrentLevelIndex(int index)
@@ -45,17 +53,38 @@ namespace Assets.Scripts.Core
 
         public void InitializeLevelStateDic()
         {
-            levelStateDic = new Dictionary<LevelLists.ELevels, LevelManager.ELevelState>();
+            LevelStateDic = new Dictionary<LevelLists.ELevels, LevelManager.ELevelState>();
             foreach (var level in _levelLists)
             {
-                levelStateDic.Add(level, LevelManager.ELevelState.Unfinished);
+                LevelStateDic.Add(level, LevelManager.ELevelState.Unfinished);
             }
         }
 
-        public void UpdateLevelStateDic(LevelSelector levelSelector)
+        public void UpdateLevelStateDic(LevelSelector levelSelector, LevelManager.ELevelState state)
         {
-            levelStateDic[levelSelector.SelectedLevel] = LevelManager.ELevelState.Finished;
-            SaveSystem.SaveLevelData(levelStateDic);
+            LevelStateDic[levelSelector.SelectedLevel] = state;
+            SaveSystem.SaveLevelData(LevelStateDic);
+        }
+
+        public Vector3 GetCubeSavedPos()
+        {
+            if (CubePlayerLevelSelectorPos.x == CubePlayerPos.x && CubePlayerLevelSelectorPos.z == CubePlayerPos.z)
+            {
+                return CubePlayerLevelSelectorActualPos;
+            }
+            else
+            {
+                return CubePlayerPos;
+            }
+        }
+
+        public Vector3 GetActualPos(Vector3 pos)
+        {
+            Vector3 actualPos = new Vector3();
+            actualPos.x = Mathf.FloorToInt(pos.x);
+            actualPos.y = 0;
+            actualPos.z = Mathf.FloorToInt(pos.z);
+            return actualPos;
         }
 
         public void LoadSelectedLevel()
@@ -76,7 +105,7 @@ namespace Assets.Scripts.Core
         }
 
         public void LoadMainMenu()
-        {
+        {           
             LoadSelectedLevel(0);
         }
 

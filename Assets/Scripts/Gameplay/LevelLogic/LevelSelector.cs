@@ -9,6 +9,7 @@ namespace Assets.Scripts.Gameplay.LevelLogic
         private Collider _collider;
        
         public LevelLists.ELevels SelectedLevel;
+        public GameObject CubeSavedPos;
         [SerializeField] private GameObject _unfinishedEffect;
         [SerializeField] private GameObject _finishedEffect;
 

@@ -13,7 +13,7 @@ namespace Assets.Scripts.Gameplay.LevelLogic
         private void OnEnable()
         {        
             SavedLevelData data = SaveSystem.SaveSystem.LoadLevelData();
-            GameManager.Instance.levelStateDic = data._levelStateDic;
+            GameManager.Instance.LevelStateDic = data.LevelStateDic;
 
             LevelSelectorManager levelSelectorManager = FindObjectOfType<LevelSelectorManager>();
             if (levelSelectorManager == null)
@@ -22,7 +22,7 @@ namespace Assets.Scripts.Gameplay.LevelLogic
             }
             else
             {
-                levelSelectorManager.UpdateAllLevelSelectorEffect(GameManager.Instance.levelStateDic);
+                levelSelectorManager.UpdateAllLevelSelectorEffect(GameManager.Instance.LevelStateDic);
             }
         }
 
