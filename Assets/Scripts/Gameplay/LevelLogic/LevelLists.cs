@@ -19,7 +19,17 @@ namespace Assets.Scripts.Gameplay.LevelLogic
             Level06,
             Level07,
             Level08,
-            Level09
+            Level09,
+            Level10,
+            Level11,
+            Level12,
+            Level13,
+            Level14,
+            Level15,
+            Level16,
+            Level17,
+            Level18,
+            Level19
         }
     }
 }

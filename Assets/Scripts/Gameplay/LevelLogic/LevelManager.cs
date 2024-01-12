@@ -60,7 +60,7 @@ namespace Assets.Scripts.Gameplay.LevelLogic
                 }
             }
             Debug.Log(currentPlayerCnt);
-            if (currentPlayerCnt != 1)
+            if (currentPlayerCnt > 1)
             {
                 return;
             }

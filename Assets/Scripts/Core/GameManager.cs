@@ -1,14 +1,12 @@
+using Assets.Scripts.BaseUtils;
+using Assets.Scripts.Gameplay.CubeLogic;
+using Assets.Scripts.Gameplay.LevelLogic;
+using Assets.Scripts.Gameplay.SaveSystem;
+using Assets.Scripts.InputActions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Assets.Scripts.BaseUtils;
-using Assets.Scripts.InputActions;
 using UnityEngine.SceneManagement;
-using Assets.Scripts.Gameplay.LevelLogic;
-using Assets.Scripts.Gameplay.SaveSystem;
-using UnityEditor.SearchService;
-using UnityEditor.SceneManagement;
-using Assets.Scripts.Gameplay.CubeLogic;
 
 namespace Assets.Scripts.Core
 {
